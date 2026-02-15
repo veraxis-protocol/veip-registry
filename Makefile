@@ -11,11 +11,11 @@ help:
 check:
 	@set -euo pipefail; \
 	req=(README.md pyproject.toml veip_registry/app.py veip_registry/schemas/veip-evidence-pack.schema.json); \
-	for f in "${req[@]}"; do \
+	for f in "$${req[@]}"; do \
 	  if [[ ! -f "$$f" ]]; then echo "Missing required file: $$f"; exit 1; fi; \
-	done
-	@python -c "import json,pathlib; p=pathlib.Path('veip_registry/schemas/veip-evidence-pack.schema.json'); json.loads(p.read_text(encoding='utf-8')); print('OK: schema JSON parses')"
-	@echo "OK: checks passed"
+	done; \
+	python -c "import json,pathlib; p=pathlib.Path('veip_registry/schemas/veip-evidence-pack.schema.json'); json.loads(p.read_text(encoding='utf-8')); print('OK: schema JSON parses')"; \
+	echo "OK: checks passed"
 
 test:
 	@pytest -q
