@@ -1,3 +1,5 @@
+LICENSE
+LICENSE.md
 README.md
 pyproject.toml
 tests/test_api.py
@@ -9,6 +11,7 @@ veip_registry/storage.py
 veip_registry.egg-info/PKG-INFO
 veip_registry.egg-info/SOURCES.txt
 veip_registry.egg-info/dependency_links.txt
+veip_registry.egg-info/entry_points.txt
 veip_registry.egg-info/requires.txt
 veip_registry.egg-info/top_level.txt
 veip_registry/schemas/veip-evidence-pack.schema.json
