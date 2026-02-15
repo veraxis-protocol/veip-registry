@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "evidence_id": "8b1a9953-c461-4f2d-b7c6-5f9f2f4e8c01",
+  "created_at": "2026-02-15T16:00:00Z",
+
+  "authority": {
+    "scope_id": "AML_SCOPE_001",
+    "issuer": "ComplianceOffice",
+    "valid_from": "2026-01-01T00:00:00Z",
+    "valid_to": "2027-01-01T00:00:00Z",
+    "constraints_ref": "policy/aml/v1"
+  },
+
+  "policy": {
+    "policy_id": "AML_POLICY",
+    "policy_version": "1.0.0",
+    "policy_hash": "abc123def456"
+  },
+
+  "action": {
+    "action_id": "action-0001",
+    "action_type": "TRANSFER",
+    "proposed_at": "2026-02-15T15:59:30Z",
+    "context_refs": [
+      "context/transaction/12345"
+    ]
+  },
+
+  "decision": {
+    "classification": "ALLOW",
+    "reason_code": "RULE_MATCH",
+    "evaluated_at": "2026-02-15T15:59:45Z"
+  },
+
+  "execution": {
+    "executed": true,
+    "executed_at": "2026-02-15T16:00:05Z",
+    "executor": "payment-engine",
+    "outcome": {
+      "status": "SUCCESS",
+      "result_ref": "ledger/entry/7890"
+    },
+    "supervisory": {
+      "required": false,
+      "resolved": false
+    }
+  },
+
+  "provenance": {
+    "system_id": "veip-sdk-demo",
+    "build": {
+      "version": "0.1.0",
+      "commit": "a1b2c3d4"
+    },
+    "environment": "local"
+  }
+}
