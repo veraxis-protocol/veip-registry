@@ -1,3 +1,4 @@
+# pyproject.toml
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
@@ -5,22 +6,45 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "veip-registry"
 version = "0.1.0"
-description = "VEIP Registry (stub): schema-validated Evidence Pack intake + retrieval API for multi-operator deployments."
+description = "MIT reference VEIP Registry: evidence ingestion + schema validation + minimal API."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Veraxis Protocol" }]
+
+authors = [
+  { name = "Veraxis Protocol" }
+]
+
+keywords = [
+  "veip",
+  "registry",
+  "evidence-pack",
+  "ai-governance",
+  "compliance",
+  "audit",
+  "fastapi"
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Topic :: Security"
+]
 
 dependencies = [
   "fastapi>=0.110.0",
   "uvicorn>=0.27.0",
-  "jsonschema>=4.22.0",
+  "jsonschema>=4.22.0"
 ]
 
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0.0",
-  "httpx>=0.27.0",
+  "httpx>=0.27.0"
 ]
 
 [project.urls]
@@ -32,7 +56,8 @@ Issues = "https://github.com/veraxis-protocol/veip-registry/issues"
 include = ["veip_registry*"]
 
 [tool.setuptools.package-data]
-veip_registry = ["../schemas/*.json"]
+# IMPORTANT: requires you to have veip_registry/schemas/veip-evidence-pack.schema.json
+veip_registry = ["schemas/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

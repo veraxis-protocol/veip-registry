@@ -1,12 +1,20 @@
 Metadata-Version: 2.4
 Name: veip-registry
 Version: 0.1.0
-Summary: VEIP Registry (stub): schema-validated Evidence Pack intake + retrieval API for multi-operator deployments.
+Summary: MIT reference VEIP Registry: evidence ingestion + schema validation + minimal API.
 Author: Veraxis Protocol
 License: MIT
 Project-URL: Homepage, https://github.com/veraxis-protocol/veip-registry
 Project-URL: Source, https://github.com/veraxis-protocol/veip-registry
 Project-URL: Issues, https://github.com/veraxis-protocol/veip-registry/issues
+Keywords: veip,registry,evidence-pack,ai-governance,compliance,audit,fastapi
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Security
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 Requires-Dist: fastapi>=0.110.0

@@ -11,3 +11,4 @@ veip_registry.egg-info/SOURCES.txt
 veip_registry.egg-info/dependency_links.txt
 veip_registry.egg-info/requires.txt
 veip_registry.egg-info/top_level.txt
+veip_registry/schemas/veip-evidence-pack.schema.json
