@@ -1,33 +1,53 @@
-# VEIP Registry (Stub)
+# VEIP Registry (Reference Implementation)
 
-Multi-operator, schema-validated intake + retrieval API for VEIP Evidence Packs.
+Multi-operator, schema-validated intake and retrieval API for VEIP Evidence Packs.
 
-This repository is a **minimal reference registry**. It demonstrates the external contract and safety posture for storing and serving VEIP Evidence Packs, without prescribing a single operator, vendor, or storage backend.
+This repository provides a minimal, vendor-neutral reference registry for storing and serving VEIP Evidence Packs. It demonstrates the external contract and safety posture expected of a VEIP-compatible registry implementation.
 
-## What it does
+It is intentionally compact and transparent.
 
-- Accepts VEIP Evidence Packs via HTTP
-- Validates each pack against the canonical schema (`schemas/veip-evidence-pack.schema.json`)
+---
+
+## Purpose
+
+The VEIP Registry defines the **external intake and retrieval surface** for Evidence Packs.
+
+It enforces:
+
+- Canonical schema validation
+- Deterministic ingestion semantics
+- Evidence retrieval by `evidence_id`
+- Clear separation from conformance or certification logic
+
+This repository demonstrates those invariants in a minimal FastAPI implementation.
+
+---
+
+## What This Repository Does
+
+- Accepts VEIP Evidence Packs via HTTP (`POST /v1/evidence`)
+- Validates each pack against the canonical VEIP schema
 - Stores packs in a local in-memory store (stub)
-- Serves retrieval endpoints by `evidence_id`
+- Serves retrieval endpoints (`GET /v1/evidence/{evidence_id}`)
+- Provides unit tests validating schema and API behavior
 
-## What it is not
+---
 
-- Not the VEIP Verifier Core (conformance/certification engine)
-- Not a production WORM store
-- Not a supervisory endorsement system
-- Not a single “global registry” assumption
+## What This Repository Is Not
+
+The VEIP Registry is **not**:
+
+- The VEIP Verifier Core (conformance engine)
+- A certification authority
+- A production WORM datastore
+- A supervisory endorsement system
+- A centralized “global registry”
+
+This is a reference surface, not a governance authority.
+
+---
 
 ## Relationship to veip-spec
 
-- The canonical Evidence Pack schema is defined in `veip-spec/schemas/veip-evidence-pack.schema.json`
-- This repo vendors that schema into `schemas/` and treats it as authoritative for validation.
+The canonical Evidence Pack schema originates in:
 
-## Quickstart
-
-Python 3.10+
-
-```bash
-pip install -e ".[dev]"
-make ci
-make run
