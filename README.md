@@ -12,6 +12,7 @@ It is intentionally compact and transparent.
 
 **Category:** Open Institutional Computation  
 **This component:** Reference intake and retrieval surface for VEIP Evidence Packs — storage and service of evidence state  
+**VEIP — Veraxis Execution Integrity Protocol:** the execution-integrity and interoperability boundary that binds already-established machine-operational authority/control state to an exact action and runtime disposition, and emits the Evidence Packs this registry stores. VEIP does not interpret governing documents, perform institutional admission, or originate institutional authority.  
 **Upstream:** Evidence Packs emitted by VEIP implementations, themselves downstream of machine-operational authority/control state established through authorized institutional interpretation and admission (the Veraxis reference path for that upstream problem is [OIC — Open Institutional Compiler](https://github.com/veraxis-protocol/Institutional-Compiler))  
 **Downstream:** Retrieval by verifiers, examiners and reconciliation processes  
 **Canonical category thesis:** https://github.com/veraxis-protocol/institutional-continuity/blob/main/THESIS.md
